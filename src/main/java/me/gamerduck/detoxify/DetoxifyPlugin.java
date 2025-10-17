@@ -53,6 +53,7 @@ public class DetoxifyPlugin extends JavaPlugin {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        getCommand("detoxifyreload").setExecutor(new DetoxifyReloadCommand(this));
     }
 
 
@@ -75,6 +76,10 @@ public class DetoxifyPlugin extends JavaPlugin {
     @NonNull
     public Path libFolder() {
         return this.LIB_FOLDER;
+    }
+    @NonNull
+    public Path pluginFolder() {
+        return this.PLUGIN_FOLDER;
     }
 
 }
